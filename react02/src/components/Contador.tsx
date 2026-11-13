@@ -1,17 +1,21 @@
 import {type ChangeEvent, useState} from "react";
 
-function Contador(){
+function Contador() {
     const [contador, setContador] = useState(0)
     const [name, setName] = useState("Mateo")
 
-    const handleUp = () => {setContador(contador+1)}
-    const handleDown = () => {setContador(contador-1)}
+    const handleUp = () => {
+        setContador(contador + 1)
+    }
+    const handleDown = () => {
+        setContador(contador - 1)
+    }
 
-    const handleChange(event:ChangeEvent<HTMLInputElement>){
+    const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
         setName(event.target.value)
     }
 
-    return(
+    return (
         <>
 
             <div> Valor {contador}</div>
@@ -20,8 +24,9 @@ function Contador(){
             <button onClick={handleDown}>-</button>
             <br/>
             <div>
-                    Nombre:
-                <input type={"text"}/>
+                Nombre:
+                <input type={"text"} value={name} onChange={handleChange}/>
+                <div>Hola {name}</div>
 
 
             </div>
