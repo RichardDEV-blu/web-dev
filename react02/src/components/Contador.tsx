@@ -1,8 +1,16 @@
-import {type ChangeEvent, useState} from "react";
+import {type ChangeEvent, useEffect, useState} from "react";
 
 function Contador() {
+
     const [contador, setContador] = useState(0)
     const [name, setName] = useState("Mateo")
+    useEffect(() => {
+        console.log("Prueba epica, componente montado")
+    })
+
+    useEffect(() => {
+        console.log(`Contador actualizado ${contador}`)
+    },[contador])
 
     const handleUp = () => {
         setContador(contador + 1)
@@ -27,8 +35,6 @@ function Contador() {
                 Nombre:
                 <input type={"text"} value={name} onChange={handleChange}/>
                 <div>Hola {name}</div>
-
-
             </div>
         </>
     )
