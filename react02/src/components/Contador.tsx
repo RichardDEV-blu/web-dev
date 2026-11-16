@@ -4,6 +4,7 @@ function Contador() {
 
     const [contador, setContador] = useState(0)
     const [name, setName] = useState("Mateo")
+
     useEffect(() => {
         console.log("Prueba epica, componente montado")
     })
@@ -11,6 +12,10 @@ function Contador() {
     useEffect(() => {
         console.log(`Contador actualizado ${contador}`)
     },[contador])
+
+    useEffect(() => {
+        console.log(`Nombre actualizado ${name}`)
+    },[name])
 
     const handleUp = () => {
         setContador(contador + 1)
@@ -25,7 +30,6 @@ function Contador() {
 
     return (
         <>
-
             <div> Valor {contador}</div>
             <br/>
             <button onClick={handleUp}>+</button>
