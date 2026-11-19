@@ -5,8 +5,7 @@ function App() {
     const [text, setText] = useState("Juan");
 
     const handleClick = () => {
-        alert("alerta!");
-        setText(text === "Juan" ? "Test" : "Juan");
+        setText((current) => (current === "Juan" ? "Test" : "Juan"));
     };
 
     const props: HolaMundo2Props = {
