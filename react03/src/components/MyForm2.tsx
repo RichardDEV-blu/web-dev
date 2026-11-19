@@ -13,7 +13,7 @@ function MyForm2() {
         <>
             <h2>My Form 2 </h2>
             <form action={handleAction}>
-                <table>
+                <table border={1}>
                     <tbody>
                         <tr>
                             <td>Nombre:</td>
@@ -28,9 +28,8 @@ function MyForm2() {
                             </td>
                         </tr>
                         <tr>
-                            <td>Seleccionado:</td>
-                            <td>
-                                <input type="checkbox" name="check" />
+                            <td colSpan={2}>
+                                Seleccionado: <input type="checkbox" name="check" />
                             </td>
                         </tr>
                     </tbody>
