@@ -3,8 +3,7 @@ export interface FormState {
     edad: string;
 }
 
-// Versión alternativa: el estado vive dentro de un objeto "persona"
-// export interface Persona {
-//     message: string;
-//     edad: string;
-// }
+export interface Persona {
+    message: string;
+    edad: string;
+}
