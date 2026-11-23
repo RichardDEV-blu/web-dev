@@ -1,10 +1,11 @@
 import {useLocation, useNavigate} from "react-router-dom";
+import type {FormState} from "../types.ts";
 
 function Form2() {
 
     const location = useLocation();
     const navigate = useNavigate();
-    const state = location.state as { message: string; edad: string } | null;
+    const state = location.state as FormState | null;
 
     const handleRegresar = () => {
         navigate("/");

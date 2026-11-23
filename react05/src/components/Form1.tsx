@@ -1,5 +1,6 @@
 import {useState, type FormEvent} from "react";
 import {useNavigate} from "react-router-dom";
+import type {FormState} from "../types.ts";
 
 function Form1() {
     const [name, setName] = useState("");
@@ -8,7 +9,8 @@ function Form1() {
 
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        navigate("/form2", {state: {message: name, edad: edad}});
+        const state: FormState = {message: name, edad: edad};
+        navigate("/form2", {state: state});
     };
 
     return (
@@ -17,28 +19,28 @@ function Form1() {
             <form onSubmit={handleSubmit}>
                 <table>
                     <tbody>
-                        <tr>
-                            <td><label htmlFor="name">Nombre:</label></td>
-                            <td>
-                                <input
-                                    id="name"
-                                    type="text"
-                                    value={name}
-                                    onChange={(e) => setName(e.target.value)}
-                                />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><label htmlFor="edad">Edad:</label></td>
-                            <td>
-                                <input
-                                    id="edad"
-                                    type="number"
-                                    value={edad}
-                                    onChange={(e) => setEdad(e.target.value)}
-                                />
-                            </td>
-                        </tr>
+                    <tr>
+                        <td><label htmlFor="name">Nombre:</label></td>
+                        <td>
+                            <input
+                                id="name"
+                                type="text"
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}
+                            />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label htmlFor="edad">Edad:</label></td>
+                        <td>
+                            <input
+                                id="edad"
+                                type="number"
+                                value={edad}
+                                onChange={(e) => setEdad(e.target.value)}
+                            />
+                        </td>
+                    </tr>
                     </tbody>
                 </table>
                 <input type="submit" value="Enviar"/>
