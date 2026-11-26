@@ -4,7 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import type { Post } from "./types.ts";
 
 const DetallePost = () => {
-    const { id } = useParams();
+    const { id } = useParams<{ id: string }>();
     const [post, setPost] = useState<Post | null>(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
